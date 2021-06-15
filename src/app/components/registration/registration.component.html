@@ -1,0 +1,30 @@
+<body>
+<main class="form-signin">
+  <div class="photo">
+    <img class="mb-4" src="assets/ww.png" alt="" width="400" height="200">
+  </div>
+    <form >
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <input type="email" [(ngModel)] = "email" [ngModelOptions]="{standalone: true}" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating mt-1">
+        <input type="password" [(ngModel)] = "password" [ngModelOptions]="{standalone: true}"  class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating mt-1">
+        <input type="text" [(ngModel)] = "name" [ngModelOptions]="{standalone: true}"  class="form-control" id="floatingPassword" placeholder="Name">
+        <label for="floatingPassword">Name</label>
+      </div>
+      <div class="form-floating mt-1">
+        <input type="text" [(ngModel)] = "surrname" [ngModelOptions]="{standalone: true}"  class="form-control" id="floatingPassword" placeholder="Surname">
+        <label for="floatingPassword">Surname</label>
+      </div>
+
+      <button class="mt- w-100 btn btn-lg btn-primary mt-1" (click) = "postdata()"  routerLink= '/user' type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© 2021–2021</p>
+    </form>
+  </main>
+</body>

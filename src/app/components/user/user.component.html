@@ -1,0 +1,72 @@
+<div class = "input-control">
+    <div class="some1">
+        <input class="form-control" [(ngModel)] = "indate" [ngModelOptions]="{standalone: true}" type="text" placeholder="In Date" aria-label="default input example">
+    </div>
+    <div class="some1">
+        <input class="form-control" [(ngModel)] = "outdate" [ngModelOptions]="{standalone: true}" type="text" placeholder="Out Date" aria-label="default input example">
+    </div>
+    <div class="some1">
+        <input class="form-control" [(ngModel)] = "hotel" [ngModelOptions]="{standalone: true}" type="text" placeholder="Hotel" aria-label="default input example">
+    </div>
+    <div class="some1">
+        <input class="form-control" [(ngModel)] = "description" [ngModelOptions]="{standalone: true}" type="text" placeholder="Description" aria-label="default input example">
+    </div>
+    <div class="some2">
+        <button type="button" (click) = "postdata()" class="btn btn-outline-dark me-6">Add</button>
+    </div>
+</div>
+
+<h2 class="pip container py-5 pb-0 border-bottom">Your Trips</h2>
+
+<div class="pop container px-4 py-5" id="custom-cards" *ngFor="let mytrip of mytrips">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <!--Настрокеи текста-->
+            <h2 class="pt-1 mt-3 mb-3 display-6 lh-1 fw-bold">Arrival: {{mytrip.indate}}</h2>
+            <h2 class="pt-1 mt-3 mb-4 display-6 lh-1 fw-bold">Departure: {{mytrip.outdate}}</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://avatars.githubusercontent.com/u/139426?s=200&amp;v=4" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-6">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>City: Karpacz</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" >
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-1 mt-3 mb-3 display-6 lh-1 fw-bold">Hotel: {{mytrip.hotel}}</h2>
+            <h2 class="pt-1 mt-3 mb-4 display-6 lh-1 fw-bold">Description: {{mytrip.description}}</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://avatars.githubusercontent.com/u/139426?s=200&amp;v=4" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-6">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>City: Karpacz</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" >
+            <div class="mapp">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500.552376675197!2d15.765620759544692!3d50.764112250317005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb69d994c80fbe3cd!2sGreen%20Mountain%20Hotel%20%26%20Apartments!5e0!3m2!1sru!2sua!4v1620323865395!5m2!1sru!2sua" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

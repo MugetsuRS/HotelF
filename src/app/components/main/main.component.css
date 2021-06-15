@@ -1,0 +1,35 @@
+mat-sidenav-container{
+   position: relative;
+ }
+ mat-sidenav{
+   padding: 15px;
+   width: 12%;
+   
+ }
+ mat-sidenav-content{
+   width: 1;
+ }
+.text{
+  color: dark;
+}
+.text2{
+  color:white;
+}
+.margin{
+  margin-top: -10px;
+}
+.margintop{
+  margin-top: 5%;
+}
+.back{
+ 
+  color: black;
+}
+mat-form-field{
+  background-color: white;
+}
+.main{
+  
+  width: 100%;
+  position: relative;
+}

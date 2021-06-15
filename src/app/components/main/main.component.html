@@ -1,0 +1,121 @@
+<div class="main">
+  <br>
+  <br>
+  <br>
+  <div class="hig">
+    <mat-sidenav-container>
+      <mat-sidenav class="bg-white text" mode="side" [(opened)]="opened">
+        <h2>Filters</h2>
+        <div [formGroup]="stars">
+          <h3>Stars</h3>
+          <div class="margin">
+            <mat-checkbox formControlName="th5" class="example-margin">5</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="th4" class="example-margin">4</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="th3" class="example-margin">3</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="th2" class="example-margin">2</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="th1" class="example-margin">1</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="margintop" [formGroup]="style">
+          <h3>Style</h3>
+          <div class="margin">
+            <mat-checkbox formControlName="modern" class="example-margin">Modern</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="classic" class="example-margin">Classic</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="margintop" [formGroup]="wifi">
+          <h3>Wifi</h3>
+          <div class="margin">
+            <mat-checkbox formControlName="yes" class="example-margin">Yes</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="no" class="example-margin">No</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="margintop" [formGroup]="pool">
+          <h3>Pool</h3>
+          <div class="margin">
+            <mat-checkbox formControlName="yes" class="example-margin">Yes</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="no" class="example-margin">No</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="margintop" [formGroup]="breakfest">
+          <h3>Breakfast</h3>
+          <div class="margin">
+            <mat-checkbox formControlName="yes" class="example-margin">Yes</mat-checkbox>
+          </div>
+          <div class="">
+            <mat-checkbox formControlName="yes" class="example-margin">No</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="margintop" [formGroup]="price">
+          <h3>Price</h3>
+          <mat-form-field class="back">
+            <mat-label>Minimal Price</mat-label>
+            <input matInput type="text" formControlName="min" [(ngModel)]="value">
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field class="back">
+            <mat-label>Maximum price</mat-label>
+            <input matInput type="text" formControlName="max" [(ngModel)]="value1">
+            <button mat-button *ngIf="value1" matSuffix mat-icon-button aria-label="Clear" (click)="value1=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="margintop">
+          <button type="button" class="btn btn-warning" (click)="filter()">Apply</button>
+        </div>
+
+      </mat-sidenav>
+      <mat-sidenav-content>
+
+        <div class="bg-dark" *ngFor="let hotela of hotels">
+          <div class="row flex-lg-row-reverse align-items-center g-0 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img src="{{hotela.photolink0}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="300"
+                   height="300" loading="lazy">
+            </div>
+            <div class="col-lg-5 text-white ">
+              <h1 class="display-6 fw-bold lh-1 mb-3 ">{{hotela.hotelname}}</h1>
+              <p class="lead">Price: {{hotela.price1}} <br>
+                Stars: {{hotela.stars}}<br>
+                Style: {{hotela.style}}<br>
+                Wifi: {{hotela.wifi}}<br>
+                Breakfast: {{hotela.breakfast}}<br>
+                Pool: {{hotela.pool}}<br>
+              </p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a type="button" class="px-4 btn btn-outline-warning btn-lg px-4 me-md-2"
+                   [routerLink]="['/hotel', hotela.hotelId]" routerLinkActive="active">Check info</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white">
+            <br>
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

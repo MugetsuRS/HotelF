@@ -1,0 +1,82 @@
+<div class="mat">
+
+
+  <div *ngIf="hotel">
+    <mat-grid-list class="mat1" cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <img src="{{hotel.photolink1}}" alt="Bootstrap" width="930" height="460">
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <img src="{{hotel.photolink2}}" alt="Bootstrap" width="930" height="460">
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <img src="{{hotel.photolink3}}" alt="Bootstrap" width="930" height="460">
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <img src="{{hotel.photolink4}}" alt="Bootstrap" width="930" height="460">
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <mat-grid-list class="mat2" cols="4" rowHeight="3:2">
+    <mat-grid-tile [colspan]="3" [rowspan]="1">
+      <div>
+        <h2 class="text">{{hotel.hotelname}}</h2><br>
+        <h2 class="text">Poland</h2><br>
+        <h2 class="text">{{hotel.city}}</h2><br>
+      </div>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2523.5882645999823!2d15.766761781024922!3d50.764667800426025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ee8be64c774c3%3A0xb69d994c80fbe3cd!2sGreen%20Mountain%20Hotel%20%26%20Apartments!5e0!3m2!1sru!2sua!4v1622570360500!5m2!1sru!2sua"
+        width="600" height="628" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <div class="borderr">
+        <div class="item1">
+          <h1>Info</h1>
+          <h2 class="margint">Stars: {{hotel.stars}}</h2>
+          <h2 class="margint">Style: {{hotel.style}}</h2>
+          <h2 class="margint">Wifi: {{hotel.wifi}}</h2>
+          <h2 class="margint">Pool: {{hotel.pool}}</h2>
+          <h2 class="margint">Breakfast: {{hotel.breakfast}}</h2>
+        </div>
+
+        <div class="item2">
+          <h1>Description</h1>
+          <h3 class="margint">{{hotel.description}}</h3>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="BO">
+        <div class="IT1">
+          <h2 class="margin"> Booking Price - {{hotel.price1}}</h2>
+          <a href="{{hotel.link1}}">
+            <button type="button" class="btn btn-warning">
+              Check Booking
+            </button>
+          </a>
+
+        </div>
+        <div class="IT2">
+          <h2 class="margin"> Agoda Price - {{hotel.price2}}</h2>
+          <a href="{{hotel.link2}}">
+            <button type="button" class="btn btn-warning">
+              Check Booking
+            </button>
+          </a>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
+
